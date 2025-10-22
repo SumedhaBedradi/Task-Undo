@@ -1,19 +1,29 @@
-import ProgressTracker from "./Components/ProgressTracker";
-import TaskForm from "./Components/TaskForm";
+import Taskform from "./Components/Taskform";
 import TaskList from "./Components/TaskList";
-
+import Progresstracker from "./Components/Progresstracker";
+import { useEffect, useState } from "react";
 
 export default function App() {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    localStorage.setItem
+      ("tasks", JSON.stringify(tasks))
+  });
+
+  const addTask = (task) => {
+    setTasks([...tasks, task]);
+  }
+
   return (
     <div>
       <h1>Task Undo</h1>
-      <p>Our friendly TaskManager</p> 
-      <TaskForm />
+      <p>Our friendly TaskManager</p>
+      <Taskform addTask={addTask} />
       <TaskList />
-      <ProgressTracker />
-            <button>Clear all Tasks</button>
-    </div>  
+      <Progresstracker />
+      <button>Clear all tasks</button>
+    </div>
   )
 }
-
 
