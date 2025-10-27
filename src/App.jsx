@@ -1,7 +1,6 @@
-
-import Taskform from "./Components/Taskform";
+import Taskform from "./Components/TaskForm";
 import TaskList from "./Components/TaskList";
-import Progresstracker from "./Components/Progresstracker";
+import Progresstracker from "./Components/ProgressTracker";
 import { useEffect, useState } from "react";
 import "./Style.css";
 
@@ -34,8 +33,8 @@ export default function App() {
   return(
     <div className="App">
       <header>
-      <h1 className="title">Task Focus</h1>
-      <p className="tagline">Our friendly TaskManager</p>
+      <h1 className="title">Task Undo</h1>
+      <p className="tagline">Our Friendly TaskManager</p>
       </header>
       <Taskform addTask = {addTask}/>
       <TaskList tasks = {tasks} 
